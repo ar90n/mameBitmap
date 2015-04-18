@@ -1,11 +1,9 @@
 What is mameBitmap ?
 ===============
-
 mameBitmap is a header only library for bitmap images.
 
 #Example
 ===============
-
 ```cpp
 #include "mameBitmap.h"
 
@@ -47,7 +45,6 @@ int main( int argc, char** argv )
 
 #Features
 ===============
-
 * only include mameBitmap.h.
 * support encoding and decoding for  raw pbm, ascii pbm, raw pgm, ascii pgm, raw ppm and ascii pgm.
 * read and write data by input and output callback functions.
