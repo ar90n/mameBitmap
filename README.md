@@ -10,7 +10,7 @@ Example
 int main( int argc, char** argv )
 {
     const char* input_path = "input_path_to_your_env";
-    const char* output_path = "output_path_to_your cele";
+    const char* output_path = "output_path_to_your_env";
 
     uint16_t width;
     uint16_t height;
