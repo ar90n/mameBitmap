@@ -9,35 +9,38 @@ Example
 
 int main( int argc, char** argv )
 {
+    const char* input_path = "input_path_to_your_env";
+    const char* output_path = "output_path_to_your cele";
+
     uint16_t width;
     uint16_t height;
     mameBitmap_format format;
     uint16_t max_value;
-    mameBitmap_getInfoFromFile( TEST_DIR "pbm_ascii.pbm", &width, &height, &format, &max_value );
+    mameBitmap_getInfoFromFile( input_path, &width, &height, &format, &max_value );
 
     size_t decode_image_buffer_size;
     mameBitmap_getImageSize( width, height, format, &decode_image_buffer_size );
 
+    uint8_t* decode_image_buffer[ decode_image_buffer_size ];
     size_t decode_image_size;
-    uint8_t* decode_image_buffer = new uint8_t[ decode_image_size ];
-
-    mameBitmap_decodeFromFile( TEST_DIR "pbm_ascii.pbm",
+    mameBitmap_decodeFromFile( input_path,
                 decode_image_buffer,
                 decode_image_buffer_size,
                 &width,
                 &height,
                 &format,
                 &max_value,
-                &decode_image_buffer_size ) );
+                &decode_image_size );
 
-    mameBitmap_encodeFromFile( decode_image_buffer,
-                decode_image_buffer_size,
-                TEST_DIR "res.pbm",
+    size_t encode_image_size;
+    mameBitmap_encodeToFile( decode_image_buffer,
+                decode_image_size,
+                output_path,
                 width,
                 height,
                 format,
                 max_value,
-                decode_image_buffer_size ) );
+                &encode_image_size );
 
     return 0;
 }
