@@ -1,6 +1,6 @@
 What is mameBitmap ?
 ===============
-mameBitmap is a header only library for bitmap images.
+mameBitmap is a header only library for netpbm format images.
 
 Example
 ===============
